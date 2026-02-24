@@ -3,60 +3,118 @@
 <head>
   <title>New Star Steel Furniture</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #111;
+      background: #0f0f0f;
       color: white;
-      text-align: center;
+      scroll-behavior: smooth;
     }
 
     header {
       background: black;
-      padding: 30px 20px;
-      border-bottom: 2px solid #444;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 3px solid #444;
     }
 
-    h1 {
+    header h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 36px;
       letter-spacing: 2px;
     }
 
-    .section {
-      padding: 50px 20px;
-    }
-
-    .product {
-      background: #1c1c1c;
-      margin: 20px auto;
-      padding: 25px;
-      max-width: 350px;
-      border-radius: 10px;
-      border: 1px solid #333;
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(to right, #111, #1c1c1c);
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 25px;
-      margin-top: 15px;
+      padding: 12px 20px;
+      margin: 10px 5px;
       background: white;
       color: black;
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
+      transition: 0.3s;
     }
 
     .btn:hover {
-      background: #ccc;
+      background: #00ff99;
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .product {
+      background: #1a1a1a;
+      padding: 20px;
+      width: 280px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      transition: 0.4s;
+    }
+
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #00ff99;
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 8px;
     }
 
     footer {
       background: black;
       padding: 20px;
+      text-align: center;
       border-top: 2px solid #444;
     }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 700px;
+      height: 350px;
+      border-radius: 10px;
+      border: 0;
+      margin-top: 20px;
+    }
+
   </style>
 </head>
 
@@ -67,40 +125,77 @@
   <p>Factory Manufacturer | Retail & Wholesale Steel Cupboards</p>
 </header>
 
-<div class="section">
-  <h2>About Our Factory</h2>
-  <p>
-    We manufacture high-quality steel cupboards for homes, offices, and businesses.
-    Retail and bulk wholesale orders available.
-  </p>
+<div class="hero">
+  <h2>Premium Quality Steel Cupboards</h2>
+  <p>Strong • Durable • Direct Factory Price</p>
+  <a class="btn" href="tel:7768909000">📞 Call Now</a>
+  <a class="btn" href="https://wa.me/917768909000">💬 WhatsApp</a>
 </div>
 
 <div class="section">
   <h2>Our Products</h2>
 
-  <div class="product">
-    <h3>2 Door Steel Cupboard</h3>
-    <p>Strong • Durable • Modern Design</p>
-    <a class="btn" href="https://wa.me/917768909000">Order on WhatsApp</a>
-  </div>
+  <div class="products">
 
-  <div class="product">
-    <h3>3 Door Steel Cupboard</h3>
-    <p>Heavy Duty • Factory Price</p>
-    <a class="btn" href="https://wa.me/917768909000">Order on WhatsApp</a>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x250" alt="2 Door Cupboard">
+      <h3>2 Door Steel Cupboard</h3>
+      <p>₹8,500</p>
+      <a class="btn" href="https://wa.me/917768909000">Order Now</a>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300x250" alt="3 Door Cupboard">
+      <h3>3 Door Steel Cupboard</h3>
+      <p>₹12,500</p>
+      <a class="btn" href="https://wa.me/917768909000">Order Now</a>
+    </div>
+
   </div>
+</div>
+
+<div class="section">
+  <h2>Our Factory Location</h2>
+  <p>
+    Plot No G-35, Kalamb Rd, Old MIDC,<br>
+    Latur, Maharashtra 413531
+  </p>
+
+  <!-- Embedded Google Map -->
+  <iframe 
+    src="https://www.google.com/maps?q=Plot+No+G-35,+Kalamb+Rd,+Old+MIDC,+Latur,+Maharashtra+413531&output=embed"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+
+  <br>
+
+  <!-- Direction & Map Buttons -->
+  <a class="btn" 
+     href="https://www.google.com/maps/dir/?api=1&destination=Plot+No+G-35,+Kalamb+Rd,+Old+MIDC,+Latur,+Maharashtra+413531" 
+     target="_blank">
+     📍 Get Directions
+  </a>
+
+  <a class="btn" 
+     href="https://www.google.com/maps?q=Plot+No+G-35,+Kalamb+Rd,+Old+MIDC,+Latur,+Maharashtra+413531" 
+     target="_blank">
+     🗺 View on Google Maps
+  </a>
 
 </div>
 
 <div class="section">
   <h2>Contact Us</h2>
   <p>Email: sureshkarbhari@gmail.com</p>
-  <a class="btn" href="https://wa.me/917768909000">Chat on WhatsApp</a>
+  <p>Phone: 7768909000</p>
 </div>
 
 <footer>
   <p>© 2026 New Star Steel Furniture. All Rights Reserved.</p>
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/917768909000">💬</a>
 
 </body>
 </html>
