@@ -3,10 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Steel Cupboard Manufacturer in Maharashtra | New Star Steel Furniture</title>
-
-<meta name="description" content="New Star Steel Furniture is a heavy gauge steel cupboard manufacturer in Latur, Maharashtra since 2008. 22+ years experience. Wholesale supply across Maharashtra including Pune, Mumbai, Nagpur, Aurangabad, Solapur.">
+<title>New Star Steel Furniture | Steel Cupboard Manufacturer Maharashtra</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -15,58 +12,96 @@
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:#0f0f0f;
+background:#0e0e0e;
 color:white;
+overflow-x:hidden;
 }
 
+/* HEADER */
 header{
 background:black;
 padding:15px 30px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-bottom:1px solid #d4af37;
+border-bottom:1px solid #C6A75E;
 }
 
 header h1{
-color:#d4af37;
+color:#C6A75E;
 margin:0;
 font-size:20px;
+font-weight:600;
 }
 
-.header-icons a{
-color:#d4af37;
+.header-right{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.phone{
+color:white;
+font-weight:600;
+font-size:15px;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.phone i{
+color:white;
+}
+
+.whatsapp{
+color:#25D366;
 font-size:22px;
-margin-left:15px;
-text-decoration:none;
+transition:0.3s;
 }
 
-.hero{
+.instagram{
+font-size:22px;
+background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 30%, #d6249f 60%, #285AEB 100%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+transition:0.3s;
+}
+
+.whatsapp:hover,
+.instagram:hover{
+transform:scale(1.15);
+}
+
+/* SLIDER */
+.slider{
 position:relative;
+width:100%;
 height:100vh;
 overflow:hidden;
 }
 
-.hero img{
+.slides{
+display:flex;
+width:400%;
+height:100%;
+animation:slide 20s infinite ease-in-out;
+}
+
+.slides img{
 width:100%;
 height:100vh;
 object-fit:cover;
-position:absolute;
-animation:slide 20s infinite;
 }
-
-.hero img:nth-child(2){animation-delay:5s;}
-.hero img:nth-child(3){animation-delay:10s;}
-.hero img:nth-child(4){animation-delay:15s;}
 
 @keyframes slide{
-0%{opacity:0;}
-5%{opacity:1;}
-25%{opacity:1;}
-30%{opacity:0;}
-100%{opacity:0;}
+0%,20%{transform:translateX(0);}
+25%,45%{transform:translateX(-100%);}
+50%,70%{transform:translateX(-200%);}
+75%,95%{transform:translateX(-300%);}
+100%{transform:translateX(0);}
 }
 
+/* HERO TEXT */
 .hero-text{
 position:absolute;
 top:55%;
@@ -75,26 +110,28 @@ transform:translate(-50%,-50%);
 background:rgba(0,0,0,0.75);
 padding:35px;
 text-align:center;
-border:1px solid #d4af37;
+border:1px solid #C6A75E;
 opacity:0;
 animation:showText 2s forwards;
-animation-delay:6s;
+animation-delay:5s;
 }
 
 @keyframes showText{
 to{opacity:1;}
 }
 
+/* SECTIONS */
 section{
 padding:70px 20px;
 text-align:center;
 }
 
 h2{
-color:#d4af37;
-margin-bottom:20px;
+color:#C6A75E;
+margin-bottom:30px;
 }
 
+/* PRODUCTS */
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -103,19 +140,41 @@ gap:20px;
 
 .products img{
 width:100%;
-border:2px solid #d4af37;
-transition:0.3s;
+border:2px solid #C6A75E;
+transition:0.4s;
 }
 
 .products img:hover{
 transform:scale(1.05);
 }
 
-.highlight{
-color:#d4af37;
-font-weight:600;
+/* FEATURES */
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
 }
 
+.feature-box{
+background:#111;
+padding:25px;
+border:1px solid #C6A75E;
+transition:0.4s;
+}
+
+.feature-box:hover{
+transform:translateY(-8px);
+}
+
+.feature-box i{
+font-size:30px;
+color:#C6A75E;
+margin-bottom:15px;
+}
+
+/* FORM */
 form input, form textarea{
 width:90%;
 padding:10px;
@@ -123,17 +182,18 @@ margin:10px 0;
 }
 
 form button{
-background:#d4af37;
+background:#C6A75E;
 border:none;
 padding:10px 20px;
 font-weight:bold;
+cursor:pointer;
 }
 
 .footer{
 background:black;
 padding:30px;
 text-align:center;
-border-top:1px solid #d4af37;
+border-top:1px solid #C6A75E;
 font-size:14px;
 }
 </style>
@@ -143,21 +203,36 @@ font-size:14px;
 
 <header>
 <h1>New Star Steel Furniture</h1>
-<div class="header-icons">
-<a href="https://wa.me/917768909000" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="https://www.instagram.com/a1starsteelfurniture" target="_blank"><i class="fab fa-instagram"></i></a>
+
+<div class="header-right">
+
+<div class="phone">
+<i class="fas fa-phone-alt"></i>
+7768909000
+</div>
+
+<a href="https://wa.me/917768909000" target="_blank" class="whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://www.instagram.com/a1starsteelfurniture" target="_blank" class="instagram">
+<i class="fab fa-instagram"></i>
+</a>
+
 </div>
 </header>
 
-<div class="hero">
+<div class="slider">
+<div class="slides">
 <img src="images/heavy-steel-cupboard-3-door-latur.jpg.jpg">
 <img src="images/steel-wardrobe-3-door-premium.jpg.jpg">
 <img src="images/double-door-steel-almirah-heavy-build.jpg.jpg">
 <img src="images/factory-steel-cupboards-midc-latur.jpg.jpg">
+</div>
 
 <div class="hero-text">
 <h2>Premium Heavy Gauge Steel Cupboards Since 2008</h2>
-<p>22+ Years of Manufacturing Excellence | Wholesale Supply Across Maharashtra</p>
+<p>22+ Years of Manufacturing Excellence | Wholesale Across Maharashtra</p>
 </div>
 </div>
 
@@ -174,12 +249,33 @@ font-size:14px;
 
 <section>
 <h2>Why Dealers Choose Us</h2>
-<p>
-<span class="highlight">Established in 2008</span> – 22+ Years Experience.<br>
-<span class="highlight">Heavy Gauge Steel Construction</span> – Stronger than regular market cupboards.<br>
-<span class="highlight">CNC Laser Cutting Technology</span> – Precision manufacturing.<br>
-Bulk Supply Available Across Maharashtra – Pune, Mumbai, Nagpur, Aurangabad, Solapur.
-</p>
+<div class="features">
+
+<div class="feature-box">
+<i class="fas fa-industry"></i>
+<h4>Established 2008</h4>
+<p>22+ Years Manufacturing Experience</p>
+</div>
+
+<div class="feature-box">
+<i class="fas fa-tools"></i>
+<h4>CNC Technology</h4>
+<p>Laser Cutting & Precision Bending</p>
+</div>
+
+<div class="feature-box">
+<i class="fas fa-shield-alt"></i>
+<h4>Heavy Gauge Steel</h4>
+<p>Stronger Than Market Standard</p>
+</div>
+
+<div class="feature-box">
+<i class="fas fa-truck"></i>
+<h4>Wholesale Supply</h4>
+<p>Across Maharashtra</p>
+</div>
+
+</div>
 </section>
 
 <section>
@@ -198,7 +294,7 @@ Bulk Supply Available Across Maharashtra – Pune, Mumbai, Nagpur, Aurangabad, S
 </section>
 
 <div class="footer">
-© 2026 New Star Steel Furniture | Steel Cupboard Manufacturer in Maharashtra
+© 2026 New Star Steel Furniture | Steel Cupboard Manufacturer Maharashtra
 </div>
 
 </body>
