@@ -15,6 +15,7 @@ font-family:'Poppins',sans-serif;
 background:#0e0e0e;
 color:white;
 overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
 /* LOADER */
@@ -104,7 +105,7 @@ to{transform:scale(1.08);}
 
 /* SECTIONS */
 section{
-padding:70px 20px;
+padding:80px 20px;
 text-align:center;
 opacity:0;
 transform:translateY(40px);
@@ -117,6 +118,24 @@ transform:translateY(0);
 h2{
 color:#C6A75E;
 margin-bottom:25px;
+}
+
+/* PRODUCTS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+.products img{
+width:100%;
+border:2px solid #C6A75E;
+transition:0.4s;
+}
+.products img:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(198,167,94,0.5);
 }
 
 /* FEATURES */
@@ -135,6 +154,7 @@ transition:0.4s;
 }
 .feature-box:hover{
 transform:translateY(-8px);
+box-shadow:0 0 20px rgba(198,167,94,0.4);
 }
 
 /* COUNTER */
@@ -185,7 +205,7 @@ font-size:14px;
 }
 </style>
 
-<!-- SEO STRUCTURED DATA -->
+<!-- STRUCTURED DATA -->
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -244,6 +264,17 @@ font-size:14px;
 </section>
 
 <section>
+<h2>Our Premium Steel Cupboards</h2>
+<div class="products">
+<img src="images/heavy-steel-cupboard-3-door-latur.jpg.jpg">
+<img src="images/double-door-steel-almirah-heavy-build.jpg.jpg">
+<img src="images/steel-wardrobe-3-door-premium.jpg.jpg">
+<img src="images/texture-finish-steel-cupboard-latur.jpg.jpg">
+<img src="images/factory-steel-cupboards-midc-latur.jpg.jpg">
+</div>
+</section>
+
+<section>
 <h2>Why Dealers Choose Us</h2>
 <div class="features">
 <div class="feature-box">CNC Laser Cutting Technology</div>
@@ -253,7 +284,6 @@ font-size:14px;
 </div>
 </section>
 
-<!-- MAP SECTION ADDED -->
 <section>
 <h2>Factory Location – Old MIDC, Latur</h2>
 <div class="map-container">
