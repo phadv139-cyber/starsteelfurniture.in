@@ -5,67 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>New Star Steel Furniture | Heavy Steel Cupboard Manufacturer Maharashtra</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
 --gold:#C6A75E;
 --dark:#0c0c0c;
---steel:#1a1a1a;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#0c0c0c,#141414,#0f0f0f);
+background:#0c0c0c;
 color:white;
 overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
-/* Animated Background Lines */
+/* INDUSTRIAL MOVING BACKGROUND */
 body::before{
 content:"";
 position:fixed;
 width:200%;
 height:200%;
 background:repeating-linear-gradient(
-45deg,
-rgba(198,167,94,0.05) 0px,
-rgba(198,167,94,0.05) 2px,
+60deg,
+rgba(198,167,94,0.04) 0px,
+rgba(198,167,94,0.04) 2px,
 transparent 2px,
-transparent 60px
+transparent 80px
 );
-animation:moveLines 25s linear infinite;
+animation:bgMove 30s linear infinite;
 z-index:-1;
 }
-@keyframes moveLines{
+@keyframes bgMove{
 0%{transform:translate(0,0);}
-100%{transform:translate(-500px,-500px);}
+100%{transform:translate(-600px,-600px);}
 }
-
-/* LOADER */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:9999;
-}
-.loader-ring{
-width:60px;height:60px;
-border:4px solid #333;
-border-top:4px solid var(--gold);
-border-radius:50%;
-animation:spin 1s linear infinite;
-}
-@keyframes spin{100%{transform:rotate(360deg);}}
 
 /* HEADER */
 header{
@@ -77,138 +55,127 @@ align-items:center;
 border-bottom:1px solid var(--gold);
 position:sticky;top:0;z-index:999;
 }
+
 header h1{
 color:var(--gold);
-font-size:20px;
 position:relative;
 overflow:hidden;
 }
 
-/* Steel Shine Animation */
+/* Shine */
 header h1::after{
 content:"";
 position:absolute;
 top:0;left:-100%;
 width:100%;height:100%;
 background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
-animation:shine 4s infinite;
+animation:shine 5s infinite;
 }
 @keyframes shine{
 100%{left:200%;}
 }
 
-.header-right{
-display:flex;
-gap:20px;
-align-items:center;
-}
-
-.phone{font-weight:600;}
-.whatsapp-top{color:#25D366;font-size:22px;}
-.instagram{
-font-size:22px;
-background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 30%, #d6249f 60%, #285AEB 100%);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
 /* SLIDER */
-.slider{
-position:relative;
-height:85vh;
-overflow:hidden;
-}
+.slider{position:relative;height:85vh;overflow:hidden;}
 .slide{
-position:absolute;
-width:100%;
-height:100%;
-opacity:0;
-transition:opacity 1.5s ease-in-out;
+position:absolute;width:100%;height:100%;
+opacity:0;transition:opacity 1.5s ease;
 }
 .slide img{
-width:100%;
-height:100%;
-object-fit:cover;
-animation:zoom 10s ease-in-out infinite alternate;
+width:100%;height:100%;object-fit:cover;
+animation:zoom 12s ease-in-out infinite alternate;
 }
 @keyframes zoom{
 from{transform:scale(1);}
-to{transform:scale(1.08);}
+to{transform:scale(1.1);}
 }
 .slide.active{opacity:1;}
 
-/* SECTION BASE */
+/* SECTION */
 section{
-padding:90px 20px;
+padding:100px 20px;
 text-align:center;
 opacity:0;
-transform:translateY(40px);
-transition:all 1s ease;
+transform:translateY(60px);
+transition:1s ease;
 }
 section.visible{
 opacity:1;
 transform:translateY(0);
 }
-h2{
-color:var(--gold);
-margin-bottom:30px;
-font-size:28px;
-}
+h2{color:var(--gold);margin-bottom:30px;}
 
-/* ACHIEVEMENTS */
-.stats-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-max-width:1100px;
-margin:auto;
-}
-.stat-box{
-background:linear-gradient(145deg,#111,#1a1a1a);
-padding:40px 20px;
-border:1px solid var(--gold);
-border-radius:12px;
-transition:0.4s;
+/* PARALLAX SECTION */
+.parallax{
+background:url('images/factory-steel-cupboards-midc-latur.jpg.jpg') center/cover fixed;
+height:60vh;
+display:flex;
+align-items:center;
+justify-content:center;
 position:relative;
-overflow:hidden;
 }
-.stat-box i{
-font-size:38px;
-color:var(--gold);
-margin-bottom:15px;
+.parallax::before{
+content:"";
+position:absolute;
+width:100%;height:100%;
+background:rgba(0,0,0,0.7);
 }
-.stat-box:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(198,167,94,0.4);
+.parallax h2{
+position:relative;
+font-size:32px;
 }
 
-/* FEATURE SECTION */
-.features-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-max-width:1200px;
-margin:auto;
+/* 3D ROTATING CUPBOARD */
+.mockup-container{
+perspective:1000px;
+display:flex;
+justify-content:center;
+margin-top:40px;
 }
-.feature-box{
-background:linear-gradient(145deg,#111,#1a1a1a);
-padding:35px;
-border-radius:12px;
+.cupboard{
+width:200px;
+height:300px;
+background:linear-gradient(145deg,#222,#111);
+border:3px solid var(--gold);
+animation:rotate3d 10s linear infinite;
+transform-style:preserve-3d;
+}
+@keyframes rotate3d{
+0%{transform:rotateY(0deg);}
+100%{transform:rotateY(360deg);}
+}
+
+/* DEALER POPUP */
+.popup{
+position:fixed;
+bottom:30px;
+left:30px;
+background:#111;
 border:1px solid var(--gold);
-transition:0.4s;
+padding:25px;
+width:300px;
+display:none;
+z-index:999;
+animation:slideIn 0.6s ease;
 }
-.feature-box i{
-font-size:35px;
-color:var(--gold);
-margin-bottom:15px;
+@keyframes slideIn{
+from{transform:translateX(-100%);}
+to{transform:translateX(0);}
 }
-.feature-box h3{
-margin:10px 0;
-color:var(--gold);
+.popup input, .popup textarea{
+width:100%;
+margin:8px 0;
+padding:8px;
+background:#222;
+border:1px solid var(--gold);
+color:white;
 }
-.feature-box:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(198,167,94,0.4);
+.popup button{
+background:var(--gold);
+border:none;
+padding:8px;
+width:100%;
+cursor:pointer;
 }
 
 /* PRODUCTS */
@@ -216,8 +183,7 @@ box-shadow:0 0 30px rgba(198,167,94,0.4);
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-max-width:1200px;
-margin:auto;
+max-width:1100px;margin:auto;
 }
 .products img{
 width:100%;
@@ -226,123 +192,89 @@ transition:0.4s;
 }
 .products img:hover{
 transform:scale(1.05);
-box-shadow:0 0 25px rgba(198,167,94,0.5);
+box-shadow:0 0 20px rgba(198,167,94,0.5);
 }
 
-/* MAP */
-.map-container{
-border:2px solid var(--gold);
-}
-
-/* FOOTER */
-.footer{
-background:black;
-padding:30px;
-border-top:1px solid var(--gold);
-}
-
-/* FLOATING WHATSAPP */
-.floating-whatsapp{
+/* FLOATING BUTTON */
+.floating-btn{
 position:fixed;
 bottom:20px;right:20px;
-background:#25D366;
-width:60px;height:60px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-box-shadow:0 4px 15px rgba(0,0,0,0.4);
+background:var(--gold);
+color:black;
+padding:15px 20px;
+border-radius:50px;
+cursor:pointer;
+z-index:999;
 animation:pulse 2s infinite;
 }
-.floating-whatsapp i{color:white;font-size:30px;}
 @keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+0%{box-shadow:0 0 0 0 rgba(198,167,94,0.7);}
+70%{box-shadow:0 0 0 15px rgba(198,167,94,0);}
+100%{box-shadow:0 0 0 0 rgba(198,167,94,0);}
 }
 </style>
 </head>
 
 <body>
 
-<div id="loader">
-<div class="loader-ring"></div>
-<p style="color:#C6A75E;margin-top:15px;">New Star Steel Furniture</p>
-</div>
-
 <header>
 <h1>New Star Steel Furniture</h1>
-<div class="header-right">
-<div class="phone">7768909000</div>
-<a href="https://wa.me/917768909000" class="whatsapp-top"><i class="fab fa-whatsapp"></i></a>
-<a href="https://www.instagram.com/a1starsteelfurniture" class="instagram"><i class="fab fa-instagram"></i></a>
-</div>
+<div>7768909000</div>
 </header>
 
 <div class="slider">
 <div class="slide active"><img src="images/heavy-steel-cupboard-3-door-latur.jpg.jpg"></div>
 <div class="slide"><img src="images/steel-wardrobe-3-door-premium.jpg.jpg"></div>
-<div class="slide"><img src="images/factory-steel-cupboards-midc-latur.jpg.jpg"></div>
+<div class="slide"><img src="images/double-door-steel-almirah-heavy-build.jpg.jpg"></div>
 </div>
 
 <section>
-<h2>Our Achievements</h2>
-<div class="stats-container">
-<div class="stat-box"><i class="fas fa-industry"></i><div class="counter" data-target="22">0</div><p>Years Experience</p></div>
-<div class="stat-box"><i class="fas fa-handshake"></i><div class="counter" data-target="1000">0</div><p>Dealers Across Maharashtra</p></div>
-<div class="stat-box"><i class="fas fa-warehouse"></i><div class="counter" data-target="50000">0</div><p>Cupboards Manufactured</p></div>
+<h2>Premium Heavy Gauge Steel Cupboards</h2>
+<p>Wholesale Manufacturer – Old MIDC, Latur</p>
+</section>
+
+<section class="parallax">
+<h2>Advanced CNC Manufacturing Facility</h2>
+</section>
+
+<section>
+<h2>3D Steel Cupboard View</h2>
+<div class="mockup-container">
+<div class="cupboard"></div>
 </div>
 </section>
 
 <section>
-<h2>Why Dealers Choose Us</h2>
-<div class="features-container">
-<div class="feature-box"><i class="fas fa-drafting-compass"></i><h3>CNC Laser Cutting</h3><p>Advanced precision manufacturing technology.</p></div>
-<div class="feature-box"><i class="fas fa-layer-group"></i><h3>Heavy Gauge Steel</h3><p>Stronger and heavier than market standard.</p></div>
-<div class="feature-box"><i class="fas fa-truck"></i><h3>Wholesale Supply</h3><p>Fast supply across Maharashtra.</p></div>
-<div class="feature-box"><i class="fas fa-tags"></i><h3>Factory Direct Pricing</h3><p>Competitive dealer pricing advantage.</p></div>
-</div>
-</section>
-
-<section>
-<h2>Our Premium Steel Cupboards</h2>
+<h2>Our Premium Products</h2>
 <div class="products">
 <img src="images/heavy-steel-cupboard-3-door-latur.jpg.jpg">
-<img src="images/double-door-steel-almirah-heavy-build.jpg.jpg">
 <img src="images/texture-finish-steel-cupboard-latur.jpg.jpg">
 <img src="images/factory-steel-cupboards-midc-latur.jpg.jpg">
 </div>
 </section>
 
-<section>
-<h2>Factory Location – Old MIDC, Latur</h2>
-<div class="map-container">
-<iframe src="https://www.google.com/maps?q=New+Star+Steel+Furniture+Latur&output=embed"
-width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
-</div>
-</section>
+<div class="floating-btn" onclick="openPopup()">Become Dealer</div>
 
-<div class="footer">
-© 2026 New Star Steel Furniture | Steel Cupboard Manufacturer Maharashtra
+<div class="popup" id="dealerPopup">
+<h3 style="color:#C6A75E;">Dealer Inquiry</h3>
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="City">
+<input type="text" placeholder="Mobile Number">
+<textarea placeholder="Message"></textarea>
+<button>Submit Inquiry</button>
 </div>
-
-<a href="https://wa.me/917768909000" class="floating-whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
 
 <script>
-window.onload=function(){
-document.getElementById("loader").style.display="none";
-};
-
+/* SLIDER */
 let slides=document.querySelectorAll('.slide');
 let index=0;
 setInterval(()=>{
 slides.forEach(s=>s.classList.remove('active'));
 slides[index].classList.add('active');
 index=(index+1)%slides.length;
-},4500);
+},5000);
 
+/* SCROLL ANIMATION */
 const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
 sections.forEach(sec=>{
@@ -352,21 +284,13 @@ sec.classList.add("visible");
 });
 });
 
-const counters=document.querySelectorAll(".counter");
-counters.forEach(counter=>{
-const update=()=>{
-const target=+counter.getAttribute("data-target");
-const count=+counter.innerText;
-const inc=target/200;
-if(count<target){
-counter.innerText=Math.ceil(count+inc);
-setTimeout(update,10);
-}else{
-counter.innerText=target+"+";
+/* DEALER POPUP */
+function openPopup(){
+document.getElementById("dealerPopup").style.display="block";
 }
-};
-update();
-});
+setTimeout(()=>{
+document.getElementById("dealerPopup").style.display="block";
+},8000);
 </script>
 
 </body>
