@@ -37,9 +37,7 @@ border-top:4px solid #C6A75E;
 border-radius:50%;
 animation:spin 1s linear infinite;
 }
-@keyframes spin{
-100%{transform:rotate(360deg);}
-}
+@keyframes spin{100%{transform:rotate(360deg);}}
 
 /* HEADER */
 header{
@@ -53,19 +51,16 @@ position:sticky;
 top:0;
 z-index:999;
 }
-
 header h1{
 color:#C6A75E;
 margin:0;
 font-size:20px;
 }
-
 .header-right{
 display:flex;
 align-items:center;
 gap:18px;
 }
-
 .phone{
 color:white;
 font-weight:600;
@@ -73,12 +68,7 @@ display:flex;
 align-items:center;
 gap:6px;
 }
-
-.whatsapp-top{
-color:#25D366;
-font-size:22px;
-}
-
+.whatsapp-top{color:#25D366;font-size:22px;}
 .instagram{
 font-size:22px;
 background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 30%, #d6249f 60%, #285AEB 100%);
@@ -93,7 +83,6 @@ width:100%;
 height:85vh;
 overflow:hidden;
 }
-
 .slide{
 position:absolute;
 width:100%;
@@ -101,22 +90,17 @@ height:100%;
 opacity:0;
 transition:opacity 1.5s ease-in-out;
 }
-
 .slide img{
 width:100%;
 height:100%;
 object-fit:cover;
 animation:zoom 8s ease-in-out infinite alternate;
 }
-
 @keyframes zoom{
 from{transform:scale(1);}
 to{transform:scale(1.08);}
 }
-
-.slide.active{
-opacity:1;
-}
+.slide.active{opacity:1;}
 
 /* SECTIONS */
 section{
@@ -126,31 +110,13 @@ opacity:0;
 transform:translateY(40px);
 transition:all 1s ease;
 }
-
 section.visible{
 opacity:1;
 transform:translateY(0);
 }
-
 h2{
 color:#C6A75E;
 margin-bottom:25px;
-}
-
-/* PRODUCTS */
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.products img{
-width:100%;
-border:2px solid #C6A75E;
-transition:0.4s;
-}
-.products img:hover{
-transform:scale(1.05);
 }
 
 /* FEATURES */
@@ -161,7 +127,6 @@ gap:25px;
 max-width:1000px;
 margin:auto;
 }
-
 .feature-box{
 background:#111;
 padding:25px;
@@ -172,11 +137,16 @@ transition:0.4s;
 transform:translateY(-8px);
 }
 
-/* COUNTERS */
+/* COUNTER */
 .counter{
 font-size:32px;
 font-weight:700;
 color:#C6A75E;
+}
+
+/* MAP */
+.map-container{
+border:2px solid #C6A75E;
 }
 
 /* FLOATING WHATSAPP */
@@ -221,7 +191,6 @@ font-size:14px;
  "@context": "https://schema.org",
  "@type": "LocalBusiness",
  "name": "New Star Steel Furniture",
- "image": "https://starsteelfurniture.in/logo.jpg",
  "address": {
    "@type": "PostalAddress",
    "addressLocality": "Latur",
@@ -237,7 +206,6 @@ font-size:14px;
 </head>
 <body>
 
-<!-- LOADER -->
 <div id="loader">
 <div class="loader-ring"></div>
 <p style="color:#C6A75E;margin-top:15px;">New Star Steel Furniture</p>
@@ -285,41 +253,46 @@ font-size:14px;
 </div>
 </section>
 
+<!-- MAP SECTION ADDED -->
+<section>
+<h2>Factory Location – Old MIDC, Latur</h2>
+<div class="map-container">
+<iframe src="https://www.google.com/maps?q=New+Star+Steel+Furniture+Latur&output=embed"
+width="100%" height="400" style="border:0;" allowfullscreen loading="lazy">
+</iframe>
+</div>
+</section>
+
 <div class="footer">
 © 2026 New Star Steel Furniture | Steel Cupboard Manufacturer Maharashtra
 </div>
 
-<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/917768909000" class="floating-whatsapp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- SCRIPTS -->
 <script>
-window.onload = function(){
+window.onload=function(){
 document.getElementById("loader").style.display="none";
 };
 
-let slides = document.querySelectorAll('.slide');
-let index = 0;
+let slides=document.querySelectorAll('.slide');
+let index=0;
 setInterval(()=>{
 slides.forEach(s=>s.classList.remove('active'));
 slides[index].classList.add('active');
-index = (index+1)%slides.length;
+index=(index+1)%slides.length;
 },4000);
 
-/* Scroll Reveal */
 const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
 sections.forEach(sec=>{
-const top=sec.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
+if(sec.getBoundingClientRect().top<window.innerHeight-100){
 sec.classList.add("visible");
 }
 });
 });
 
-/* Counter Animation */
 const counters=document.querySelectorAll(".counter");
 counters.forEach(counter=>{
 const update=()=>{
@@ -337,7 +310,6 @@ update();
 });
 </script>
 
-<!-- Marathi SEO Hidden -->
 <div style="display:none;">
 स्टील कपाट उत्पादक लातूर महाराष्ट्र  
 महाराष्ट्रातील घाऊक स्टील फर्निचर निर्माता  
