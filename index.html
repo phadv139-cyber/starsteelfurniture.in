@@ -43,14 +43,9 @@ gap:18px;
 .phone{
 color:white;
 font-weight:600;
-font-size:15px;
 display:flex;
 align-items:center;
 gap:6px;
-}
-
-.phone i{
-color:white;
 }
 
 .whatsapp{
@@ -72,52 +67,30 @@ transition:0.3s;
 transform:scale(1.15);
 }
 
-/* SLIDER */
+/* SMOOTH SLIDER */
 .slider{
 position:relative;
 width:100%;
-height:100vh;
+height:85vh;
 overflow:hidden;
 }
 
-.slides{
-display:flex;
-width:400%;
+.slide{
+position:absolute;
+width:100%;
 height:100%;
-animation:slide 20s infinite ease-in-out;
+opacity:0;
+transition:opacity 1.5s ease-in-out;
 }
 
-.slides img{
+.slide img{
 width:100%;
-height:100vh;
+height:100%;
 object-fit:cover;
 }
 
-@keyframes slide{
-0%,20%{transform:translateX(0);}
-25%,45%{transform:translateX(-100%);}
-50%,70%{transform:translateX(-200%);}
-75%,95%{transform:translateX(-300%);}
-100%{transform:translateX(0);}
-}
-
-/* HERO TEXT */
-.hero-text{
-position:absolute;
-top:55%;
-left:50%;
-transform:translate(-50%,-50%);
-background:rgba(0,0,0,0.75);
-padding:35px;
-text-align:center;
-border:1px solid #C6A75E;
-opacity:0;
-animation:showText 2s forwards;
-animation-delay:5s;
-}
-
-@keyframes showText{
-to{opacity:1;}
+.slide.active{
+opacity:1;
 }
 
 /* SECTIONS */
@@ -128,7 +101,7 @@ text-align:center;
 
 h2{
 color:#C6A75E;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 /* PRODUCTS */
@@ -205,7 +178,6 @@ font-size:14px;
 <h1>New Star Steel Furniture</h1>
 
 <div class="header-right">
-
 <div class="phone">
 <i class="fas fa-phone-alt"></i>
 7768909000
@@ -218,24 +190,39 @@ font-size:14px;
 <a href="https://www.instagram.com/a1starsteelfurniture" target="_blank" class="instagram">
 <i class="fab fa-instagram"></i>
 </a>
-
 </div>
 </header>
 
+<!-- SLIDER -->
 <div class="slider">
-<div class="slides">
+
+<div class="slide active">
 <img src="images/heavy-steel-cupboard-3-door-latur.jpg.jpg">
+</div>
+
+<div class="slide">
 <img src="images/steel-wardrobe-3-door-premium.jpg.jpg">
+</div>
+
+<div class="slide">
 <img src="images/double-door-steel-almirah-heavy-build.jpg.jpg">
+</div>
+
+<div class="slide">
 <img src="images/factory-steel-cupboards-midc-latur.jpg.jpg">
 </div>
 
-<div class="hero-text">
-<h2>Premium Heavy Gauge Steel Cupboards Since 2008</h2>
-<p>22+ Years of Manufacturing Excellence | Wholesale Across Maharashtra</p>
-</div>
 </div>
 
+<!-- HEADING BELOW SLIDER -->
+<section style="padding:50px 20px;">
+<h2>Premium Heavy Gauge Steel Cupboards Since 2008</h2>
+<p style="color:#ccc;">
+22+ Years of Manufacturing Excellence | Wholesale Across Maharashtra
+</p>
+</section>
+
+<!-- PRODUCTS -->
 <section>
 <h2>Our Premium Steel Cupboards</h2>
 <div class="products">
@@ -247,6 +234,7 @@ font-size:14px;
 </div>
 </section>
 
+<!-- WHY CHOOSE US -->
 <section>
 <h2>Why Dealers Choose Us</h2>
 <div class="features">
@@ -278,6 +266,7 @@ font-size:14px;
 </div>
 </section>
 
+<!-- ENQUIRY -->
 <section>
 <h2>Dealer Enquiry</h2>
 <form action="https://formsubmit.co/sureshkarbhari@gmail.com" method="POST">
@@ -288,14 +277,29 @@ font-size:14px;
 </form>
 </section>
 
+<!-- MAP -->
 <section>
 <h2>Factory Location – Old MIDC, Latur</h2>
-<iframe src="https://www.google.com/maps?q=New+Star+Steel+Furniture+Latur&output=embed" width="100%" height="400" style="border:0;"></iframe>
+<iframe src="https://www.google.com/maps?q=New+Star+Steel+Furniture+Latur&output=embed"
+width="100%" height="400" style="border:0;"></iframe>
 </section>
 
 <div class="footer">
 © 2026 New Star Steel Furniture | Steel Cupboard Manufacturer Maharashtra
 </div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+function showSlide() {
+slides.forEach(slide => slide.classList.remove('active'));
+slides[index].classList.add('active');
+index = (index + 1) % slides.length;
+}
+
+setInterval(showSlide, 4000);
+</script>
 
 </body>
 </html>
