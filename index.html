@@ -3,19 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New Star Steel Furniture | Steel Cupboard Manufacturer Maharashtra</title>
+<title>New Star Steel Furniture | Heavy Steel Cupboard Manufacturer Maharashtra</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+:root{
+--gold:#C6A75E;
+--dark:#0c0c0c;
+--steel:#1a1a1a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-margin:0;
 font-family:'Poppins',sans-serif;
-background:#0e0e0e;
+background:linear-gradient(135deg,#0c0c0c,#141414,#0f0f0f);
 color:white;
 overflow-x:hidden;
 scroll-behavior:smooth;
+}
+
+/* Animated Background Lines */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:repeating-linear-gradient(
+45deg,
+rgba(198,167,94,0.05) 0px,
+rgba(198,167,94,0.05) 2px,
+transparent 2px,
+transparent 60px
+);
+animation:moveLines 25s linear infinite;
+z-index:-1;
+}
+@keyframes moveLines{
+0%{transform:translate(0,0);}
+100%{transform:translate(-500px,-500px);}
 }
 
 /* LOADER */
@@ -23,7 +51,7 @@ scroll-behavior:smooth;
 position:fixed;
 width:100%;
 height:100%;
-background:#000;
+background:black;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -31,10 +59,9 @@ flex-direction:column;
 z-index:9999;
 }
 .loader-ring{
-width:60px;
-height:60px;
+width:60px;height:60px;
 border:4px solid #333;
-border-top:4px solid #C6A75E;
+border-top:4px solid var(--gold);
 border-radius:50%;
 animation:spin 1s linear infinite;
 }
@@ -47,28 +74,36 @@ padding:15px 30px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-bottom:1px solid #C6A75E;
-position:sticky;
-top:0;
-z-index:999;
+border-bottom:1px solid var(--gold);
+position:sticky;top:0;z-index:999;
 }
 header h1{
-color:#C6A75E;
-margin:0;
+color:var(--gold);
 font-size:20px;
+position:relative;
+overflow:hidden;
 }
+
+/* Steel Shine Animation */
+header h1::after{
+content:"";
+position:absolute;
+top:0;left:-100%;
+width:100%;height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+animation:shine 4s infinite;
+}
+@keyframes shine{
+100%{left:200%;}
+}
+
 .header-right{
 display:flex;
+gap:20px;
 align-items:center;
-gap:18px;
 }
-.phone{
-color:white;
-font-weight:600;
-display:flex;
-align-items:center;
-gap:6px;
-}
+
+.phone{font-weight:600;}
 .whatsapp-top{color:#25D366;font-size:22px;}
 .instagram{
 font-size:22px;
@@ -80,7 +115,6 @@ background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 30%, #d6249f
 /* SLIDER */
 .slider{
 position:relative;
-width:100%;
 height:85vh;
 overflow:hidden;
 }
@@ -95,7 +129,7 @@ transition:opacity 1.5s ease-in-out;
 width:100%;
 height:100%;
 object-fit:cover;
-animation:zoom 8s ease-in-out infinite alternate;
+animation:zoom 10s ease-in-out infinite alternate;
 }
 @keyframes zoom{
 from{transform:scale(1);}
@@ -103,9 +137,9 @@ to{transform:scale(1.08);}
 }
 .slide.active{opacity:1;}
 
-/* SECTIONS */
+/* SECTION BASE */
 section{
-padding:80px 20px;
+padding:90px 20px;
 text-align:center;
 opacity:0;
 transform:translateY(40px);
@@ -116,8 +150,65 @@ opacity:1;
 transform:translateY(0);
 }
 h2{
-color:#C6A75E;
-margin-bottom:25px;
+color:var(--gold);
+margin-bottom:30px;
+font-size:28px;
+}
+
+/* ACHIEVEMENTS */
+.stats-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1100px;
+margin:auto;
+}
+.stat-box{
+background:linear-gradient(145deg,#111,#1a1a1a);
+padding:40px 20px;
+border:1px solid var(--gold);
+border-radius:12px;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+.stat-box i{
+font-size:38px;
+color:var(--gold);
+margin-bottom:15px;
+}
+.stat-box:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(198,167,94,0.4);
+}
+
+/* FEATURE SECTION */
+.features-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+.feature-box{
+background:linear-gradient(145deg,#111,#1a1a1a);
+padding:35px;
+border-radius:12px;
+border:1px solid var(--gold);
+transition:0.4s;
+}
+.feature-box i{
+font-size:35px;
+color:var(--gold);
+margin-bottom:15px;
+}
+.feature-box h3{
+margin:10px 0;
+color:var(--gold);
+}
+.feature-box:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(198,167,94,0.4);
 }
 
 /* PRODUCTS */
@@ -130,7 +221,7 @@ margin:auto;
 }
 .products img{
 width:100%;
-border:2px solid #C6A75E;
+border:2px solid var(--gold);
 transition:0.4s;
 }
 .products img:hover{
@@ -138,92 +229,40 @@ transform:scale(1.05);
 box-shadow:0 0 25px rgba(198,167,94,0.5);
 }
 
-/* FEATURES */
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-max-width:1000px;
-margin:auto;
-}
-.feature-box{
-background:#111;
-padding:25px;
-border:1px solid #C6A75E;
-transition:0.4s;
-}
-.feature-box:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px rgba(198,167,94,0.4);
-}
-
-/* COUNTER */
-.counter{
-font-size:32px;
-font-weight:700;
-color:#C6A75E;
-}
-
 /* MAP */
 .map-container{
-border:2px solid #C6A75E;
-}
-
-/* FLOATING WHATSAPP */
-.floating-whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-box-shadow:0 4px 15px rgba(0,0,0,0.4);
-z-index:999;
-animation:pulse 2s infinite;
-}
-.floating-whatsapp i{
-color:white;
-font-size:30px;
-}
-@keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+border:2px solid var(--gold);
 }
 
 /* FOOTER */
 .footer{
 background:black;
 padding:30px;
-text-align:center;
-border-top:1px solid #C6A75E;
-font-size:14px;
+border-top:1px solid var(--gold);
+}
+
+/* FLOATING WHATSAPP */
+.floating-whatsapp{
+position:fixed;
+bottom:20px;right:20px;
+background:#25D366;
+width:60px;height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 4px 15px rgba(0,0,0,0.4);
+animation:pulse 2s infinite;
+}
+.floating-whatsapp i{color:white;font-size:30px;}
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 </style>
-
-<!-- STRUCTURED DATA -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "LocalBusiness",
- "name": "New Star Steel Furniture",
- "address": {
-   "@type": "PostalAddress",
-   "addressLocality": "Latur",
-   "addressRegion": "Maharashtra",
-   "addressCountry": "India"
- },
- "telephone": "+917768909000",
- "url": "https://starsteelfurniture.in",
- "description": "Steel cupboard manufacturer in Maharashtra. Heavy gauge steel almirah factory in Latur."
-}
-</script>
-
 </head>
+
 <body>
 
 <div id="loader">
@@ -234,9 +273,7 @@ font-size:14px;
 <header>
 <h1>New Star Steel Furniture</h1>
 <div class="header-right">
-<div class="phone">
-<i class="fas fa-phone-alt"></i> 7768909000
-</div>
+<div class="phone">7768909000</div>
 <a href="https://wa.me/917768909000" class="whatsapp-top"><i class="fab fa-whatsapp"></i></a>
 <a href="https://www.instagram.com/a1starsteelfurniture" class="instagram"><i class="fab fa-instagram"></i></a>
 </div>
@@ -245,21 +282,25 @@ font-size:14px;
 <div class="slider">
 <div class="slide active"><img src="images/heavy-steel-cupboard-3-door-latur.jpg.jpg"></div>
 <div class="slide"><img src="images/steel-wardrobe-3-door-premium.jpg.jpg"></div>
-<div class="slide"><img src="images/double-door-steel-almirah-heavy-build.jpg.jpg"></div>
 <div class="slide"><img src="images/factory-steel-cupboards-midc-latur.jpg.jpg"></div>
 </div>
 
 <section>
-<h2>Premium Heavy Gauge Steel Cupboards Since 2008</h2>
-<p>22+ Years of Manufacturing Excellence | Wholesale Across Maharashtra</p>
+<h2>Our Achievements</h2>
+<div class="stats-container">
+<div class="stat-box"><i class="fas fa-industry"></i><div class="counter" data-target="22">0</div><p>Years Experience</p></div>
+<div class="stat-box"><i class="fas fa-handshake"></i><div class="counter" data-target="1000">0</div><p>Dealers Across Maharashtra</p></div>
+<div class="stat-box"><i class="fas fa-warehouse"></i><div class="counter" data-target="50000">0</div><p>Cupboards Manufactured</p></div>
+</div>
 </section>
 
 <section>
-<h2>Our Achievements</h2>
-<div class="features">
-<div><div class="counter" data-target="22">0</div>Years Experience</div>
-<div><div class="counter" data-target="1000">0</div>Dealers Served</div>
-<div><div class="counter" data-target="50000">0</div>Cupboards Manufactured</div>
+<h2>Why Dealers Choose Us</h2>
+<div class="features-container">
+<div class="feature-box"><i class="fas fa-drafting-compass"></i><h3>CNC Laser Cutting</h3><p>Advanced precision manufacturing technology.</p></div>
+<div class="feature-box"><i class="fas fa-layer-group"></i><h3>Heavy Gauge Steel</h3><p>Stronger and heavier than market standard.</p></div>
+<div class="feature-box"><i class="fas fa-truck"></i><h3>Wholesale Supply</h3><p>Fast supply across Maharashtra.</p></div>
+<div class="feature-box"><i class="fas fa-tags"></i><h3>Factory Direct Pricing</h3><p>Competitive dealer pricing advantage.</p></div>
 </div>
 </section>
 
@@ -268,19 +309,8 @@ font-size:14px;
 <div class="products">
 <img src="images/heavy-steel-cupboard-3-door-latur.jpg.jpg">
 <img src="images/double-door-steel-almirah-heavy-build.jpg.jpg">
-<img src="images/steel-wardrobe-3-door-premium.jpg.jpg">
 <img src="images/texture-finish-steel-cupboard-latur.jpg.jpg">
 <img src="images/factory-steel-cupboards-midc-latur.jpg.jpg">
-</div>
-</section>
-
-<section>
-<h2>Why Dealers Choose Us</h2>
-<div class="features">
-<div class="feature-box">CNC Laser Cutting Technology</div>
-<div class="feature-box">Heavy Gauge Steel Build</div>
-<div class="feature-box">Wholesale Across Maharashtra</div>
-<div class="feature-box">Factory Direct Pricing</div>
 </div>
 </section>
 
@@ -288,8 +318,7 @@ font-size:14px;
 <h2>Factory Location – Old MIDC, Latur</h2>
 <div class="map-container">
 <iframe src="https://www.google.com/maps?q=New+Star+Steel+Furniture+Latur&output=embed"
-width="100%" height="400" style="border:0;" allowfullscreen loading="lazy">
-</iframe>
+width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
 </div>
 </section>
 
@@ -312,7 +341,7 @@ setInterval(()=>{
 slides.forEach(s=>s.classList.remove('active'));
 slides[index].classList.add('active');
 index=(index+1)%slides.length;
-},4000);
+},4500);
 
 const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
@@ -339,12 +368,6 @@ counter.innerText=target+"+";
 update();
 });
 </script>
-
-<div style="display:none;">
-स्टील कपाट उत्पादक लातूर महाराष्ट्र  
-महाराष्ट्रातील घाऊक स्टील फर्निचर निर्माता  
-हेवी गेज स्टील कपाट कारखाना  
-</div>
 
 </body>
 </html>
