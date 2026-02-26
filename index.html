@@ -14,9 +14,9 @@
 --dark:#0c0c0c;
 }
 
-/* GLOBAL STYLE */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+
 body{
 font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#0c0c0c,#141414,#101010);
@@ -24,173 +24,231 @@ color:white;
 overflow-x:hidden;
 }
 
-/* SUBTLE GOLD PARTICLES */
-.particles{
-position:fixed;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:-1;
-}
-.particles span{
-position:absolute;
-width:4px;
-height:4px;
-background:var(--gold);
-border-radius:50%;
-opacity:0.25;
-animation:float 18s linear infinite;
-}
-@keyframes float{
-0%{transform:translateY(100vh);}
-100%{transform:translateY(-10vh);}
-}
+/* ===== HEADER ===== */
 
-/* HEADER */
 header{
-background:black;
+background:linear-gradient(145deg,#000,#111);
 padding:15px 30px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-bottom:2px solid var(--gold);
-position:sticky;top:0;z-index:999;
+border-bottom:3px solid var(--gold);
+position:sticky;
+top:0;
+z-index:999;
 }
 
-header .logo h1{
+.logo h1{
 color:var(--gold);
-font-size:20px;
-position:relative;
-overflow:hidden;
+font-size:22px;
 }
-
-header .logo h1::after{
-content:"";
-position:absolute;
-top:0;left:-100%;
-width:100%;height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
-animation:shine 5s infinite;
-}
-@keyframes shine{100%{left:200%;}}
 
 .header-buttons{
-display:flex;gap:12px;flex-wrap:wrap;
+display:flex;
+gap:12px;
 }
 
 .header-buttons a{
-padding:10px 15px;
+padding:10px 16px;
 font-size:14px;
 border-radius:30px;
 text-decoration:none;
-font-weight:500;
-display:flex;align-items:center;gap:8px;
+display:flex;
+align-items:center;
+gap:6px;
 transition:0.3s;
+white-space:nowrap;
 }
 
-.header-buttons .map-btn{background:var(--gold);color:black;}
-.header-buttons .call-btn{background:#222;color:white;border:1px solid var(--gold);}
-.header-buttons .whatsapp-btn{background:#25D366;color:white;}
-.header-buttons .insta-btn{
+.map-btn{background:var(--gold);color:black;}
+.call-btn{background:#222;color:white;border:1px solid var(--gold);}
+.whatsapp-btn{background:#25D366;color:white;}
+.insta-btn{
 background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 30%,#d6249f 60%,#285AEB 100%);
 color:white;
 }
-.header-buttons a:hover{transform:translateY(-3px);box-shadow:0 0 15px rgba(198,167,94,0.4);}
 
-/* SLIDER */
-.slider{position:relative;height:88vh;overflow:hidden;}
-.slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1.5s ease-in-out;}
-.slide img{width:100%;height:100%;object-fit:cover;animation:zoom 12s ease-in-out infinite alternate;}
-@keyframes zoom{from{transform:scale(1);}to{transform:scale(1.08);}}
+.header-buttons a:hover{
+transform:translateY(-3px);
+box-shadow:0 0 15px rgba(198,167,94,0.5);
+}
+
+/* ===== SLIDER ===== */
+
+.slider{
+position:relative;
+height:88vh;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity 1.5s ease;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
 .slide.active{opacity:1;}
 
 .slide-overlay{
-position:absolute;bottom:20%;left:50%;transform:translateX(-50%);
+position:absolute;
+bottom:20%;
+left:50%;
+transform:translateX(-50%);
 background:rgba(0,0,0,0.6);
-padding:20px 35px;border:1px solid var(--gold);
-border-radius:8px;text-align:center;
+padding:25px 40px;
+border:1px solid var(--gold);
+border-radius:8px;
+text-align:center;
 }
-.slide-overlay h2{color:var(--gold);font-size:24px;margin-bottom:8px;}
 
-/* SECTION */
-section{padding:90px 20px;text-align:center;opacity:0;transform:translateY(40px);transition:1s ease;}
-section.visible{opacity:1;transform:translateY(0);}
-h2{color:var(--gold);margin-bottom:25px;}
+.slide-overlay h2{
+color:var(--gold);
+margin-bottom:10px;
+}
 
-/* PARALLAX */
-.parallax{
-background:url('images/factory-steel-cupboards-midc-latur.jpg.jpg') center/cover fixed;
-height:55vh;display:flex;align-items:center;justify-content:center;position:relative;
-}
-.parallax::before{
-content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.68);
-}
-.parallax h2{position:relative;font-size:30px;}
+/* ===== SECTION ===== */
 
-/* ACHIEVEMENTS */
-.stats-container{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;
-max-width:1100px;margin:auto;
+section{
+padding:100px 20px;
+text-align:center;
 }
-.stat-box{
-background:linear-gradient(145deg,#111,#1c1c1c);
-padding:40px 20px;border:1px solid var(--gold);
-border-radius:12px;transition:0.4s;
-}
-.stat-box i{font-size:36px;color:var(--gold);margin-bottom:12px;}
-.stat-box:hover{transform:translateY(-8px);box-shadow:0 0 28px rgba(198,167,94,0.4);}
 
-/* FEATURES */
-.features-container{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;max-width:1200px;margin:auto;
+h2{
+color:var(--gold);
+margin-bottom:25px;
 }
+
+/* ===== GRIDS ===== */
+
+.stats-container,
+.features-container,
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+/* BOX STYLING */
+
+.stat-box,
 .feature-box{
 background:linear-gradient(145deg,#111,#1c1c1c);
-padding:35px;border-radius:12px;border:1px solid var(--gold);
+padding:40px;
+border:1px solid var(--gold);
+border-radius:12px;
 transition:0.4s;
 }
-.feature-box i{font-size:34px;color:var(--gold);margin-bottom:10px;}
-.feature-box:hover{transform:translateY(-8px);box-shadow:0 0 26px rgba(198,167,94,0.4);}
+
+.stat-box:hover,
+.feature-box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(198,167,94,0.4);
+}
+
+.stat-box i,
+.feature-box i{
+font-size:35px;
+color:var(--gold);
+margin-bottom:10px;
+}
 
 /* PRODUCTS */
-.products{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;max-width:1200px;margin:auto;
-}
+
 .products img{
-width:100%;border:6px solid var(--gold);border-radius:10px;transition:0.4s;
+width:100%;
+border:6px solid var(--gold);
+border-radius:12px;
+transition:0.4s;
 }
+
 .products img:hover{
 transform:scale(1.06);
 box-shadow:0 0 30px rgba(198,167,94,0.6);
 }
 
 /* MAP */
+
 .map-container{
-border:3px solid var(--gold);border-radius:8px;
+border:3px solid var(--gold);
+border-radius:10px;
 }
 
 /* FOOTER */
+
 .footer{
-background:black;padding:40px;border-top:2px solid var(--gold);text-align:center;
-font-size:14px;
+background:black;
+padding:40px;
+border-top:3px solid var(--gold);
+text-align:center;
+}
+
+/* ===== DESKTOP-LIKE MOBILE VIEW ===== */
+
+@media(max-width:768px){
+
+section{
+padding:60px 15px;
+}
+
+/* Keep slider big */
+.slider{
+height:75vh;
+}
+
+/* 2 columns for products */
+.products{
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+/* 2 columns for features */
+.features-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+/* 2 columns achievements */
+.stats-container{
+grid-template-columns:repeat(2,1fr);
+}
+
+/* Horizontal scroll header buttons */
+.header-buttons{
+flex-wrap:nowrap;
+overflow-x:auto;
+}
+.header-buttons::-webkit-scrollbar{
+display:none;
+}
+
+.slide-overlay{
+width:90%;
+padding:15px;
+}
+
+h2{
+font-size:20px;
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<div class="particles">
-<span style="left:10%;animation-delay:0s;"></span>
-<span style="left:30%;animation-delay:4s;"></span>
-<span style="left:50%;animation-delay:2s;"></span>
-<span style="left:70%;animation-delay:8s;"></span>
-<span style="left:85%;animation-delay:3s;"></span>
-</div>
-
 <header>
-<div class="logo"><h1>New Star Steel Furniture</h1></div>
+<div class="logo">
+<h1>New Star Steel Furniture</h1>
+</div>
 
 <div class="header-buttons">
 
@@ -236,16 +294,12 @@ font-size:14px;
 <p>Factory Direct | CNC Precision | Heavy Build Quality</p>
 </section>
 
-<section class="parallax">
-<h2>Advanced CNC Manufacturing Facility</h2>
-</section>
-
 <section>
 <h2>Our Achievements</h2>
 <div class="stats-container">
-<div class="stat-box"><i class="fas fa-industry"></i><div class="counter" data-target="22">0</div><p>Years Experience</p></div>
-<div class="stat-box"><i class="fas fa-handshake"></i><div class="counter" data-target="1000">0</div><p>Dealers Served</p></div>
-<div class="stat-box"><i class="fas fa-warehouse"></i><div class="counter" data-target="50000">0</div><p>Cupboards Manufactured</p></div>
+<div class="stat-box"><i class="fas fa-industry"></i><p>22+ Years Experience</p></div>
+<div class="stat-box"><i class="fas fa-handshake"></i><p>1000+ Dealers Served</p></div>
+<div class="stat-box"><i class="fas fa-warehouse"></i><p>50000+ Cupboards Manufactured</p></div>
 </div>
 </section>
 
@@ -289,31 +343,6 @@ slides.forEach(s=>s.classList.remove('active'));
 slides[index].classList.add('active');
 index=(index+1)%slides.length;
 },5000);
-
-const sections=document.querySelectorAll("section");
-window.addEventListener("scroll",()=>{
-sections.forEach(sec=>{
-if(sec.getBoundingClientRect().top<window.innerHeight-100){
-sec.classList.add("visible");
-}
-});
-});
-
-const counters=document.querySelectorAll(".counter");
-counters.forEach(counter=>{
-const update=()=>{
-const target=+counter.getAttribute("data-target");
-const count=+counter.innerText;
-const inc=target/200;
-if(count<target){
-counter.innerText=Math.ceil(count+inc);
-setTimeout(update,10);
-}else{
-counter.innerText=target+"+";
-}
-};
-update();
-});
 </script>
 
 </body>
