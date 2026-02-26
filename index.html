@@ -24,11 +24,11 @@ color:white;
 overflow-x:hidden;
 }
 
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 
-header{
+.top-header{
 background:linear-gradient(145deg,#000,#111);
-padding:15px 30px;
+padding:14px 25px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -40,40 +40,41 @@ z-index:999;
 
 .logo h1{
 color:var(--gold);
-font-size:22px;
+font-size:20px;
+letter-spacing:1px;
 }
 
-.header-buttons{
+.header-icons{
 display:flex;
 gap:12px;
 }
 
-.header-buttons a{
-padding:10px 16px;
-font-size:14px;
-border-radius:30px;
-text-decoration:none;
+.icon-btn{
+width:42px;
+height:42px;
 display:flex;
 align-items:center;
-gap:6px;
-transition:0.3s;
-white-space:nowrap;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+font-size:16px;
+transition:0.3s ease;
 }
 
-.map-btn{background:var(--gold);color:black;}
-.call-btn{background:#222;color:white;border:1px solid var(--gold);}
-.whatsapp-btn{background:#25D366;color:white;}
-.insta-btn{
+.icon-btn.gold{background:var(--gold);color:black;}
+.icon-btn.dark{background:#222;color:white;border:1px solid var(--gold);}
+.icon-btn.whatsapp{background:#25D366;color:white;}
+.icon-btn.insta{
 background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 30%,#d6249f 60%,#285AEB 100%);
 color:white;
 }
 
-.header-buttons a:hover{
-transform:translateY(-3px);
-box-shadow:0 0 15px rgba(198,167,94,0.5);
+.icon-btn:hover{
+transform:translateY(-4px) scale(1.08);
+box-shadow:0 0 20px rgba(198,167,94,0.6);
 }
 
-/* ===== SLIDER ===== */
+/* ================= SLIDER ================= */
 
 .slider{
 position:relative;
@@ -114,7 +115,7 @@ color:var(--gold);
 margin-bottom:10px;
 }
 
-/* ===== SECTION ===== */
+/* ================= SECTIONS ================= */
 
 section{
 padding:100px 20px;
@@ -126,7 +127,7 @@ color:var(--gold);
 margin-bottom:25px;
 }
 
-/* ===== GRIDS ===== */
+/* ================= GRIDS ================= */
 
 .stats-container,
 .features-container,
@@ -138,7 +139,7 @@ max-width:1200px;
 margin:auto;
 }
 
-/* BOX STYLING */
+/* BOX STYLE */
 
 .stat-box,
 .feature-box{
@@ -192,7 +193,7 @@ border-top:3px solid var(--gold);
 text-align:center;
 }
 
-/* ===== DESKTOP-LIKE MOBILE VIEW ===== */
+/* ================= DESKTOP-LIKE MOBILE ================= */
 
 @media(max-width:768px){
 
@@ -200,39 +201,21 @@ section{
 padding:60px 15px;
 }
 
-/* Keep slider big */
 .slider{
 height:75vh;
 }
 
-/* 2 columns for products */
 .products{
 grid-template-columns:repeat(2,1fr);
 gap:15px;
 }
 
-/* 2 columns for features */
 .features-container{
 grid-template-columns:repeat(2,1fr);
 }
 
-/* 2 columns achievements */
 .stats-container{
 grid-template-columns:repeat(2,1fr);
-}
-
-/* Horizontal scroll header buttons */
-.header-buttons{
-flex-wrap:nowrap;
-overflow-x:auto;
-}
-.header-buttons::-webkit-scrollbar{
-display:none;
-}
-
-.slide-overlay{
-width:90%;
-padding:15px;
 }
 
 h2{
@@ -245,30 +228,32 @@ font-size:20px;
 
 <body>
 
-<header>
+<header class="top-header">
+
 <div class="logo">
 <h1>New Star Steel Furniture</h1>
 </div>
 
-<div class="header-buttons">
+<div class="header-icons">
 
-<a href="https://www.google.com/maps?q=New+Star+Steel+Furniture+Latur" target="_blank" class="map-btn">
-<i class="fas fa-map-marker-alt"></i> Google Map
+<a href="https://www.google.com/maps?q=New+Star+Steel+Furniture+Latur" target="_blank" class="icon-btn gold">
+<i class="fas fa-map-marker-alt"></i>
 </a>
 
-<a href="tel:7768909000" class="call-btn">
-<i class="fas fa-phone"></i> Call Dealer
+<a href="tel:7768909000" class="icon-btn dark">
+<i class="fas fa-phone"></i>
 </a>
 
-<a href="https://wa.me/917768909000" target="_blank" class="whatsapp-btn">
-<i class="fab fa-whatsapp"></i> WhatsApp
+<a href="https://wa.me/917768909000" target="_blank" class="icon-btn whatsapp">
+<i class="fab fa-whatsapp"></i>
 </a>
 
-<a href="https://www.instagram.com/a1starsteelfurniture?igsh=NWpteHo5dXkxZ3U5" target="_blank" class="insta-btn">
-<i class="fab fa-instagram"></i> Instagram
+<a href="https://www.instagram.com/a1starsteelfurniture?igsh=NWpteHo5dXkxZ3U5" target="_blank" class="icon-btn insta">
+<i class="fab fa-instagram"></i>
 </a>
 
 </div>
+
 </header>
 
 <div class="slider">
